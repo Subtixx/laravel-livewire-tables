@@ -113,4 +113,11 @@ trait PaginationConfiguration
 
         return $this;
     }
+
+    public function setPaginationAttributes(array $paginationAttributes): self
+    {
+        $this->paginationAttributes = [...['default' => false], ...$paginationAttributes];
+
+        return $this;
+    }
 }

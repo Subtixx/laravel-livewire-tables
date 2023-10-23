@@ -37,6 +37,8 @@ trait WithPagination
 
     public array $numberOfPaginatorsRendered = [];
 
+    public array $paginationAttributes = [];
+
     // TODO: Test
     public function setupPagination(): void
     {

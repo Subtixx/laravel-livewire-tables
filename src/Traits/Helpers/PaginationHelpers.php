@@ -97,6 +97,11 @@ trait PaginationHelpers
         return $this->paginationMethod === $paginationMethod;
     }
 
+    public function getPaginationAttributes(): array
+    {
+        return count($this->paginationAttributes) ? $this->paginationAttributes : ['default' => true];
+    }
+
     /**
      * @return array<mixed>
      */
