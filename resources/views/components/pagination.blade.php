@@ -15,7 +15,8 @@
                 <div>
                     @if ($component->paginationIsEnabled() && $component->isPaginationMethod('standard') && $rows->lastPage() > 1)
                         <p {{ $attributes->merge($customAttributes['pagination'])
-                                ->class("paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white")->except("default")
+                                ->class(["paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white" => $customAttributes['pagination']['default'] ?? true])
+                                ->except("default")
                             }}>
                             <span>@lang('Showing')</span>
                             <span class="font-medium">{{ $rows->firstItem() }}</span>
@@ -28,7 +29,8 @@
                     @elseif ($component->paginationIsEnabled() && $component->isPaginationMethod('simple'))
                         <p
                             {{ $attributes->merge($customAttributes['pagination'])
-                                ->class("paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white")->except("default")
+                                ->class(["paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white" => $customAttributes['pagination']['default'] ?? true])
+                                ->except("default")
                             }}>
                             <span>@lang('Showing')</span>
                             <span class="font-medium">{{ $rows->firstItem() }}</span>
@@ -39,7 +41,8 @@
                     @else
                         <p
                             {{ $attributes->merge($customAttributes['pagination'])
-                                ->class("paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white")->except("default")
+                                ->class(["paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white" => $customAttributes['pagination']['default'] ?? true])
+                                ->except("default")
                             }}>
                             @lang('Showing')
                             <span class="font-medium">{{ $rows->count() }}</span>
